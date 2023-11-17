@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cameroon Logos</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <!-- File links -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    
+</head>
+<body>
+      <!-- Header -->
+      <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Cameroon Logos</a>
+            
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="search" name="search" id="search" placeholder="Start searching for logo...">
+                </div>
+
+                <div class="nav-cta"></div>
+
+                <div class="toggle-light-dark"></div>
+            </div>
+        </nav>
+      </header>
+
+    {% block body %}
+    {% endblock body %}
+</body>
+</html>
