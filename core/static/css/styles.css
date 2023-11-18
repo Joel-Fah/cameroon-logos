@@ -1,13 +1,8 @@
 /* Imports: Fonts */
 
 @font-face {
-    font-family: Afolkalips;
-    src: url('../fonts/Afolkalips\ Swash.ttf');
-}
-
-@font-face {
-    font-family: Jelani;
-    src: url(../fonts/jelani.otf);
+    font-family: Coolvetica;
+    src: url('../fonts/coolvetica\ rg.otf');
 }
 
 @font-face {
@@ -28,15 +23,14 @@
     --gradient: linear-gradient(94deg, #206EF3 0%, #161070 100%);
 
     /* Shadow */
-    --shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.50);
+    --shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
 
     /* Transition */
     --transition: all 0.3s ease-in-out;
 
     /* Fonts */
     --body: Satoshi, sans-serif;
-    --logo: Jelani;
-    --bg: Afolkalips;
+    --title: Coolvetica;
 }
 
 /* Generic */
@@ -55,25 +49,60 @@ body {
     font-family: var(--body);
     color: var(--dark);
     font-size: 16px;
+    line-height: 24px;
 }
 
-h1 {
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 90px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title) !important;
     background: var(--gradient, linear-gradient(94deg, #206EF3 0%, #161070 100%));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    line-height: 50px;
+}
+
 a {
-    text-decoration: non;
+    text-decoration: none;
+}
+
+a.btn {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    background: var(--gradient, linear-gradient(94deg, #206EF3 0%, #161070 100%));
+    color: var(--pure-white);
+    font-weight: 500;
+    line-height: 30px;
+    transition: var(--transition);
+    outline: 1px solid transparent;
+}
+
+a.btn:hover {
+    box-shadow: var(--shadow);
+    outline: 1.5px solid var(--light-blue);
 }
 
 input {
-    border: none;
+    border: 1.5px solid transparent;
+    outline: 1.5px solid transparent;
     transition: var(--transition);
+    font-family: var(--body);
+    font-weight: 500;
 }
 
 input::placeholder {
@@ -82,12 +111,35 @@ input::placeholder {
     opacity: 0.5;
 }
 
+input:hover {
+    box-shadow: var(--shadow);
+}
+
 input:focus,
 input:active {
-    border: 1px solid var(--gradient, #206EF3);
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    border: 1.5px solid var(--light-blue);
+    outline: 1.5px solid var(--light-blue);
+    box-shadow: var(--shadow);
 }
+
+/* Top light */
+.top-light {
+    position: absolute;
+    top: -15%;
+    border-radius: 1919px;
+    opacity: 0.5;
+    background: var(--gradient, linear-gradient(94deg, #206EF3 0%, #161070 100%));
+    filter: blur(50px);
+    width: 100vh;
+    width: 1919px;
+    height: 94px;
+}
+
 /* Header */
+
+header {
+    margin-top: 30px;
+}
 
 .navbar {
     display: flex;
@@ -97,23 +149,85 @@ input:active {
     margin: auto;
 }
 
+.navbar .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+.title p {
+    margin: 0;
+}
+
 .navbar a.logo {
     color: var(--light-blue, #206EF3);
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    text-transform: uppercase;
-    font-family: var(--logo);
+    font-family: var(--title);
     text-decoration: none;
 }
 
-.navbar .nav-actions .search-bar {}
+.navbar .nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .nav-actions .search-bar {
+    position: relative;
+}
 
 .navbar .nav-actions .search-bar input {
     border-radius: 50px;
     background: rgba(32, 110, 243, 0.10);
     padding: 15px 20px 15px;
+    padding-right: 100px;
 }
+
+.navbar .nav-actions .search-bar input[type='search'] {
+    min-width: 400px;
+}
+
+.navbar .nav-actions .search-bar input[type='submit'] {
+    background: var(--gradient);
+    color: var(--pure-white);
+    font-weight: 600;
+    padding: 10px 20px 10px;
+    position: absolute;
+    top: 10%;
+    right: 2%;
+}
+
+.tags {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.tags .tag-item {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: var(--light, #F5F5F5);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.tags .tag-item:hover {
+    color: var(--light-blue);
+    background: rgba(32, 110, 243, 0.10);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.tags .tag-item:active {
+    border-radius: 50px;
+    border: 1px solid var(--light-blue, #206EF3);
+    background: var(--light, #F5F5F5);
+    font-weight: bold;
+}
+
 /* Home page */
 .container {
     max-width: 1500px;
