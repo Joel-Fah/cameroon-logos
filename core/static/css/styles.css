@@ -50,6 +50,7 @@ body {
     color: var(--dark);
     font-size: 16px;
     line-height: 24px;
+    margin: 0;
 }
 
 h1,
@@ -85,7 +86,7 @@ a.btn {
     gap: 10px;
     border-radius: 50px;
     background: var(--gradient, linear-gradient(94deg, #206EF3 0%, #161070 100%));
-    color: var(--pure-white);
+    color: var(--pure-white, #fff);
     font-weight: 500;
     line-height: 30px;
     transition: var(--transition);
@@ -95,6 +96,7 @@ a.btn {
 a.btn:hover {
     box-shadow: var(--shadow);
     outline: 1.5px solid var(--light-blue);
+    cursor: pointer;
 }
 
 input {
@@ -138,7 +140,12 @@ input:active {
 /* Header */
 
 header {
-    margin-top: 30px;
+    margin-top: 35px;
+    /* position: fixed;
+    width: 100%;
+    background-color: #ffffff50;
+    backdrop-filter: blur(20px);
+    z-index: 999; */
 }
 
 .navbar {
@@ -206,7 +213,8 @@ header {
     gap: 10px;
 }
 
-.tags .tag-item {
+.tags .tag-item,
+.logo-container .logo-image .logo-tags .tag-item {
     padding: 5px 15px;
     border-radius: 20px;
     background: var(--light, #F5F5F5);
@@ -214,14 +222,16 @@ header {
     border: 1px solid transparent;
 }
 
-.tags .tag-item:hover {
+.tags .tag-item:hover,
+.logo-container .logo-image .logo-tags .tag-item:hover {
     color: var(--light-blue);
     background: rgba(32, 110, 243, 0.10);
     cursor: pointer;
     border: 1px solid transparent;
 }
 
-.tags .tag-item:active {
+.tags .tag-item:active,
+.logo-container .logo-image .logo-tags .tag-item:active {
     border-radius: 50px;
     border: 1px solid var(--light-blue, #206EF3);
     background: var(--light, #F5F5F5);
@@ -230,10 +240,128 @@ header {
 
 /* Home page */
 .container {
-    max-width: 1500px;
+    /* max-width: 1500px; */
+    padding-top: 30px;
 }
 
 .row {
     display: grid;
+    gap: 16px;
     grid-template-columns: repeat(12, 1fr);
+    max-width: 1500px;
+    margin: auto;
+}
+
+.logo-container {
+    grid-column: span 4;
+    padding: 15px;
+    border-radius: 0px 30px 30px 30px;
+    background: var(--light, #F5F5F5);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.logo-container .logo-header {
+    display: flex;
+    /* max-width: 470px; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container .logo-header .logo-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.logo-container .logo-header .logo-title .logo-title__name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.logo-container .logo-header small {
+    color: var(--light-blue, #206EF3);
+    font-family: Satoshi;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    display: block;
+}
+
+.logo-container .logo-header .logo-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.logo-container .logo-header .logo-info div {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 50px;
+    background: rgba(32, 110, 243, 0.10);
+}
+
+.logo-container .logo-header .logo-info a.btn {
+    font-weight: 500;
+    padding: 5px 10px;
+    color: var(--pure-white, #fff);
+}
+
+.logo-container .logo-header .logo-info a.btn small {
+    color: var(--pure-white, #fff);
+    font-weight: 500;
+}
+
+.logo-container .logo-image {
+    /* background-color: var(--grey-blue, #727C8510); */
+    background: #727C8520;
+    width: inherit;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.20);
+    position: relative;
+}
+
+.logo-container .logo-image .logo-tags {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+/* Footer */
+footer .footer-content {
+    max-width: 1500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+footer hr {
+    background-color: var(--grey-blue, #727C85);
+    opacity: 0.5;
+}
+
+footer .credentials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .credentials a {
+    font-family: var(--title);
+    font-weight: 500;
+}
+
+footer .credentials .social-links {
+    display: flex;
+    gap: 20px;
 }

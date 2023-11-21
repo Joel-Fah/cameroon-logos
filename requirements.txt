@@ -1,0 +1,11 @@
+asgiref==3.7.2
+autopep8==2.0.4
+Django==4.2.7
+django-quill-editor==0.1.40
+gunicorn==21.2.0
+packaging==23.2
+Pillow==10.1.0
+pycodestyle==2.11.1
+sqlparse==0.4.4
+tzdata==2023.3
+whitenoise==6.6.0
