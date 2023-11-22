@@ -69,9 +69,9 @@ h6 {
 h1 {
     font-size: 48px;
     font-weight: 700;
-    line-height: normal;
+    line-height: 60px;
     margin: 0;
-    line-height: 50px;
+    /* line-height: 50px; */
 }
 
 a {
@@ -93,13 +93,34 @@ a.btn {
     outline: 1px solid transparent;
 }
 
-a.btn:hover {
+a.btn:hover,
+a.btn:active {
     box-shadow: var(--shadow);
     outline: 1.5px solid var(--light-blue);
     cursor: pointer;
 }
 
-input {
+button.btn-outline {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid var(--gradient, #206EF3);
+    background: rgba(32, 110, 243, 0.10);
+    transition: var(--transition);
+    outline: 1.5px solid transparent;
+}
+
+button.btn-outline:hover,
+button.btn-outline:active {
+    box-shadow: var(--shadow);
+    outline: 1.5px solid var(--light-blue);
+    cursor: pointer;
+}
+
+input,
+textarea {
     border: 1.5px solid transparent;
     outline: 1.5px solid transparent;
     transition: var(--transition);
@@ -107,21 +128,29 @@ input {
     font-weight: 500;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: var(--grey-blue, #727C85);
     font-weight: 500;
     opacity: 0.5;
 }
 
-input:hover {
+input:hover,
+textarea:hover {
     box-shadow: var(--shadow);
 }
 
 input:focus,
-input:active {
+input:active,
+textarea:focus,
+textarea:active {
     border: 1.5px solid var(--light-blue);
     outline: 1.5px solid var(--light-blue);
     box-shadow: var(--shadow);
+}
+
+textarea {
+    resize: vertical;
 }
 
 /* Top light */
@@ -135,6 +164,7 @@ input:active {
     width: 100vh;
     width: 1919px;
     height: 94px;
+    z-index: 2;
 }
 
 /* Header */
@@ -299,6 +329,10 @@ header {
     gap: 10px;
 }
 
+.logo-container .logo-header .logo-info div svg > * {
+    color: var(--light-blue, #206EF3) !important;
+}
+
 .logo-container .logo-header .logo-info div {
     display: flex;
     padding: 5px 10px;
@@ -343,6 +377,7 @@ footer .footer-content {
     max-width: 1500px;
     margin: auto;
     margin-top: 30px;
+    /* padding: 10px 0; */
 }
 
 footer hr {

@@ -1,0 +1,32 @@
+<header>
+        <nav class="navbar">
+            <div class="title">
+                <a href="#" class="logo">
+                    <h1>Welcome to<br>Cameroon Logos</h1>
+                </a>
+                <p>
+                    An open source collection of {logos_count} logos from 237
+                </p>
+            </div>
+
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="search" name="search" id="search" placeholder="Start searching for logo...">
+                    <input type="submit" value="search" name="submit">
+                </div>
+
+                <div class="cta">
+                    <a href="{% url 'core:add_logo' %}" class="btn">Add a logo <i data-lucide="package-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="tags">
+            <a href="" class="tag-item">fintech</a>
+            <a href="" class="tag-item">healthtech</a>
+            <a href="" class="tag-item">edutech</a>
+            <a href="" class="tag-item">agritech</a>
+            <a href="" class="tag-item">community</a>
+        </div>
+    </header>

@@ -5,3 +5,6 @@ from django.views.generic import TemplateView, View
 
 class HomeView(TemplateView):
     template_name = 'index.html'
+    
+class AddLogoView(TemplateView):
+    template_name = 'add_logo.html'

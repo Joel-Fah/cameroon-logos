@@ -1,0 +1,124 @@
+/* Imports: Fonts */
+
+@font-face {
+    font-family: Coolvetica;
+    src: url('../fonts/coolvetica\ rg.otf');
+}
+
+@font-face {
+    font-family: Satoshi;
+    src: url('../fonts/Satoshi-Variable.ttf');
+}
+
+/* Global variables */
+
+:root {
+    /* Colors */
+    --light-blue: #206EF3;
+    --dark-blue: #151425;
+    --grey-blue: #727C85;
+    --light: #F5F5F5;
+    --pure-white: #fff;
+    --dark: #121212;
+    --gradient: linear-gradient(94deg, #206EF3 0%, #161070 100%);
+
+    /* Shadow */
+    --shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+
+    /* Transition */
+    --transition: all 0.3s ease-in-out;
+
+    /* Fonts */
+    --body: Satoshi, sans-serif;
+    --title: Coolvetica;
+}
+
+/* Generic */
+input.form-input,
+textarea.form-input {
+    border-radius: 10px;
+    background: rgba(32, 110, 243, 0.10);
+    padding: 15px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    position: relative;
+}
+
+
+.form-container .form-image {
+    background: url(../images/african-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    grid-column: 1 / span 4;
+}
+
+.form-container .form-content {
+    grid-column: 5 / -1;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    position: relative;
+}
+
+.form-content .form-header {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 100px 30px 16px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+    position: fixed;
+    /* width: 66.35%; */
+    left: 33.5%;
+    right: 0;
+    z-index: 1;
+}
+
+
+
+.form-content .form-header .form-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+}
+
+.form-content .form-header .form-header-actions a:last-child svg > * {
+    color: var(--light-blue, #206EF3);
+}
+
+.form-content .form-fields {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 18.5%;
+    max-width: 90%;
+}
+
+.form-content .form-fields .form-group {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 5px;
+}
+
+.form-content .form-fields .form-group label {
+    display: block;
+    & span {
+        opacity: 0.5;
+    }
+}
+
+.form-content .form-fields .form-group label.required::after {
+    content: ' *';
+    color: red;
+}

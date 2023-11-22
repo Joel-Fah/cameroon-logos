@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Custom CSS -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock css %}
+
+<!-- This is the body of the home page -->
+{% block body %}
+<main>
+    <div class="form-container">
+        <div class="form-image"></div>
+
+        <div class="form-content">
+            <form action="" method="">
+                {% csrf_token %}
+                <div class="form-header">
+                    <h1>Contribute by<br>
+                        Adding your logo to the crew
+                    </h1>
+                    <div class="form-header-actions">
+                        <a href="" class="btn">
+                            Submit logo <i data-lucide="package-plus"></i>
+                        </a>
+                        <button id="" class="btn-outline">
+                            <i data-lucide="info"></i>
+                        </button>
+                        
+                    </div>
+                </div>
+
+                <div class="form-fields">
+                    <div class="form-group">
+                        <label class="required" for="name">Name your logo</label>
+                        <input type="text" class="form-input" name="name" id="name" placeholder="The name of the company/startup/business">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="" for="description">A brief description about yourself and how your logo is used</label>
+                        <textarea class="form-input" name="description" id="description" rows="5" placeholder="Make it long, make it short ... it's how you feel it but let people know about you"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="" for="url">A link where we can know more about yous <span>(leave empty if none)</span></label>
+                        <input type="url" class="form-input" name="url" id="url" placeholder="this_is_my_company.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required" for="upload">Upload default versions (.png, .jpg/.jpeg and .svg) of your logo <span>(10MB max size)</span></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+    <!-- Include Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+{% endblock body %}
